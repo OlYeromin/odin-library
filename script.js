@@ -14,4 +14,9 @@ function addBookToLibrary(title, author, read) {
 addBookToLibrary("The Hobbit", "J.R.Tolkien", false)
 addBookToLibrary("Slaughterhouse-Five", "K.Vonnegut", true)
 
-console.log(myLibrary[1]);
+const addButton = document.querySelector("#add");
+addButton.addEventListener("click", addBookCard);
+
+function addBookCard() {
+  console.log(`The "Add book" button is clicked!`)
+}
