@@ -17,3 +17,27 @@ body {
 #footer {
     background-color:  #ea580c;
 }
+
+main {
+    display: grid;
+    grid-template-rows: min-content;
+    grid-auto-rows: auto;
+    grid-template-columns: repeat(auto-fit, minmax(15ch, 36ch));
+    justify-items: stretch;
+    grid-auto-flow: row;
+    
+    column-gap: 40px;
+    padding-right: 40px;
+}
+
+div.book-card {
+    border-radius: 10px;
+    padding: 2ch;
+    background: linear-gradient(90deg, #fdba74 2%, white 2%);
+    box-shadow: 2px 3px 5px gray;
+    margin-bottom: 40px;
+
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
