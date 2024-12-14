@@ -18,5 +18,16 @@ const addButton = document.querySelector("#add");
 addButton.addEventListener("click", addBookCard);
 
 function addBookCard() {
-  console.log(`The "Add book" button is clicked!`)
+  alert(`You pressed the "Add" button!`);
 }
+
+function createBookCard() {
+  const bookList = document.querySelector("main");
+  const newBookCard = document.createElement("div");
+  newBookCard.classList.add("book-card");
+  newBookCard.appendChild(document.createElement("h3"));
+  newBookCard.appendChild(document.createElement("p"));
+  newBookCard.appendChild(document.createElement("p"));
+  newBookCard.appendChild(document.createElement("div"));
+  bookList.appendChild(newBookCard);
+} 
