@@ -10,8 +10,8 @@ function createSpecificElement(element, className, text) {
   specificELement = document.createElement(element);
   if (className != null)
     specificELement.classList.add(className);
-  if (className != null)
-    specificELement.innerText = text;
+  if (text != null)
+    specificELement.textContent = text;
   return specificELement;
 }
 
@@ -32,11 +32,13 @@ function addBookCard() {
 
 function createBookCard() {
   const bookList = document.querySelector("main");
-  const newBookCard = document.createElement("div");
-  newBookCard.classList.add("book-card");
+  const newBookCard = createSpecificElement("div", "book-card", null);
   newBookCard.appendChild(document.createElement("h3"));
   newBookCard.appendChild(document.createElement("p"));
   newBookCard.appendChild(document.createElement("p"));
-  newBookCard.appendChild(document.createElement("div"));
+  const buttonList = createSpecificElement("div", "book-operations", null);
+  buttonList.appendChild(createSpecificElement("button", null, "Delete book"));
+  buttonList.appendChild(createSpecificElement("button", null, "Read"));
+  newBookCard.appendChild(buttonList);
   bookList.appendChild(newBookCard);
 } 
