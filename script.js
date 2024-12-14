@@ -6,6 +6,15 @@ function Book(title, author, read) {
   this.read = read;
 }
 
+function createSpecificElement(element, className, text) {
+  specificELement = document.createElement(element);
+  if (className != null)
+    specificELement.classList.add(className);
+  if (className != null)
+    specificELement.innerText = text;
+  return specificELement;
+}
+
 function addBookToLibrary(title, author, read) {
   const newBook = new Book(title, author, read);
   myLibrary.push(newBook);
