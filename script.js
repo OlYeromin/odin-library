@@ -30,15 +30,18 @@ function addBookCard() {
   alert(`You pressed the "Add" button!`);
 }
 
-function createBookCard() {
+function createBookCard(bookname, author, read) {
   const bookList = document.querySelector("main");
   const newBookCard = createSpecificElement("div", "book-card", null);
-  newBookCard.appendChild(document.createElement("h3"));
-  newBookCard.appendChild(document.createElement("p"));
-  newBookCard.appendChild(document.createElement("p"));
-  const buttonList = createSpecificElement("div", "book-operations", null);
-  buttonList.appendChild(createSpecificElement("button", null, "Delete book"));
-  buttonList.appendChild(createSpecificElement("button", null, "Read"));
-  newBookCard.appendChild(buttonList);
+    newBookCard.appendChild(createSpecificElement("h3", null, bookname));
+    newBookCard.appendChild(createSpecificElement("p", null, author));
+    if (read) 
+      newBookCard.appendChild(createSpecificElement("p", null, "Read"))
+    else 
+      newBookCard.appendChild(createSpecificElement("p", null, "Not read"));
+    const buttonList = createSpecificElement("div", "book-operations", null);
+      buttonList.appendChild(createSpecificElement("button", null, "Delete book"));
+      buttonList.appendChild(createSpecificElement("button", null, "Read"));
+    newBookCard.appendChild(buttonList);
   bookList.appendChild(newBookCard);
 } 
