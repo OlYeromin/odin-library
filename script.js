@@ -24,7 +24,11 @@ addBookToLibrary("The Hobbit", "J.R.Tolkien", false)
 addBookToLibrary("Slaughterhouse-Five", "K.Vonnegut", true)
 
 const addButton = document.querySelector("#add");
-addButton.addEventListener("click", addBookCard);
+const dialog = document.querySelector("#add-book-dialog");
+
+addButton.addEventListener("click", () => {
+  dialog.showModal();
+});
 
 function createBookCard(bookname, author, read) {
   const bookList = document.querySelector("main");
