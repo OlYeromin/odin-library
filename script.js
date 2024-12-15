@@ -36,7 +36,7 @@ function createBookCard(bookname, author, read) {
     else 
       newBookCard.appendChild(createSpecificElement("p", null, "Not read"));
     const buttonList = createSpecificElement("div", "book-operations", null);
-      buttonList.appendChild(createSpecificElement("button", null, "Delete book"));
+      buttonList.appendChild(createSpecificElement("button", "delete-card", "Delete book"));
       buttonList.appendChild(createSpecificElement("button", null, "Read"));
     newBookCard.appendChild(buttonList);
   bookList.appendChild(newBookCard);
