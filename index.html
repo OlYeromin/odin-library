@@ -8,15 +8,32 @@
     <script src="script.js" defer></script>
 </head>
 <body>
-    <div id="modal">
-        <div id="modal-content">
-            <h3>Hello world!</h3>
-            <p>I am a modal window!</p>
-            <p>I am a modal window!</p>
-            <p>I am a modal window!</p>
-            <p>I am a modal window!</p>
-        </div>
-    </div>
+    <dialog open>
+        <form>
+            <p>
+                <label for="title">
+                    Title:
+                    <input type="text" id="title" name="title">
+                </label>
+            </p>
+            <p>
+                <label for="author">
+                    Author:
+                    <input type="text" id="author" name="author">
+                </label>
+            </p>
+            <p>
+                <label>
+                    Have you read it?
+                    <input type="radio" id="read" name="read-or-not" value="true">
+                        <label for="read">Yes</label>
+                    <input type="radio" id="not_read" name="read-or-not" value="false">
+                        <label for="not_read">No</label>
+                </label>
+            </p>
+            <button>Add book</button>
+        </form>
+    </dialog>
     <div id="header">
         <div id="logo"></div>
         <button id="add">Add book</button>
