@@ -25,9 +25,11 @@ addBookToLibrary("Slaughterhouse-Five", "K.Vonnegut", true)
 
 const addButton = document.querySelector("#add");
 addButton.addEventListener("click", addBookCard);
+const bookList = document.querySelector("main");
+
+
 
 function createBookCard(bookname, author, read) {
-  const bookList = document.querySelector("main");
   const newBookCard = createSpecificElement("div", "book-card", null);
     newBookCard.appendChild(createSpecificElement("h3", null, bookname));
     newBookCard.appendChild(createSpecificElement("p", null, author));
