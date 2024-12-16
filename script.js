@@ -30,7 +30,7 @@ const bookList = document.querySelector("main");
 bookList.onclick = function(event) {
   let target = event.target;
   if (target.className != "delete-card") return;
-  console.log("You clicked delete button!");
+  console.log(target.parentNode.parentNode.remove());
 }
 
 function createBookCard(bookname, author, read) {
