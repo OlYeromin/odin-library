@@ -26,12 +26,23 @@ addBookToLibrary("Slaughterhouse-Five", "K.Vonnegut", true)
 const addButton = document.querySelector("#add");
 /*addButton.addEventListener("click", addBookCard());*/
 const bookList = document.querySelector("main");
+deletionDialog = document.querySelector("#deletion-dialog");
+confirmationButton = document.querySelector("#deletion-dialog > .confirm");
+cancelButton = document.querySelector("#deletion-dialog > .cancel");
 
 bookList.onclick = function(event) {
   let target = event.target;
   if (target.className != "delete-card") return;
-  console.log(target.parentNode.parentNode.remove());
-}
+  deletionDialog.showModal();
+  confirmationButton.onclick = () => {      // If you use event listeners, you will need to remove them
+    target.parentNode.parentNode.remove();  // after clicking the cancelButton, which proved to be impossible. 
+    deletionDialog.close();                 // Otherwise the books you decided not to delete will be deleted
+  };                                        // once you finally choose to delete some book. 
+};
+
+cancelButton.addEventListener("click", () => {
+  deletionDialog.close()  
+});
 
 function createBookCard(bookname, author, read) {
   const newBookCard = createSpecificElement("div", "book-card", null);
