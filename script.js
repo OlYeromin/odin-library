@@ -49,6 +49,10 @@ addBook.addEventListener("click", (event) => {
     else createBookCard(bookname, author, false);
   event.preventDefault();
   dialog.close();
+});
+
+dialog.addEventListener("close", (e) => {
+  document.querySelector("#book-info").reset();
 })
 
 function createBookCard(bookname, author, read) {
