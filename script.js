@@ -45,6 +45,10 @@ addBook.addEventListener("click", (event) => {
     event.preventDefault();
     return;
   }
+  if (bookStatusInput.value === "true") createBookCard(bookname, author, true);
+    else createBookCard(bookname, author, false);
+  event.preventDefault();
+  dialog.close();
 })
 
 function createBookCard(bookname, author, read) {
