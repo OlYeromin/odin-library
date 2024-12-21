@@ -25,10 +25,16 @@ addBookToLibrary("Slaughterhouse-Five", "K.Vonnegut", true)
 
 const addButton = document.querySelector("#add");
 const dialog = document.querySelector("#add-book-dialog");
+const addBook = document.querySelector("#add-book");
 
 addButton.addEventListener("click", () => {
   dialog.showModal();
 });
+
+addBook.addEventListener("click", (event) => {
+  const bookname = document.querySelector("input#title").value;
+  const author = document.querySelector("input#author").value;
+})
 
 function createBookCard(bookname, author, read) {
   const bookList = document.querySelector("main");
