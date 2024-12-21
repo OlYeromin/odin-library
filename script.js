@@ -43,6 +43,36 @@ bookList.onclick = function(event) {
 cancelButton.addEventListener("click", () => {
   deletionDialog.close()  
 });
+const dialog = document.querySelector("#add-book-dialog");
+const addBook = document.querySelector("#add-book");
+
+addButton.addEventListener("click", () => {
+  dialog.showModal();
+});
+
+addBook.addEventListener("click", (event) => {
+  const bookname = document.querySelector("input#title").value;
+  const author = document.querySelector("input#author").value;
+  const bookStatusInput = document.querySelector(`input[name="read-or-not"]:checked`);
+  if (bookname == "" || author == "") {
+    alert("You should fill out all the fields.");
+    event.preventDefault();
+    return;
+  };
+  if (bookStatusInput == null) {
+    alert("Please say if you have read the book");
+    event.preventDefault();
+    return;
+  }
+  if (bookStatusInput.value === "true") createBookCard(bookname, author, true);
+    else createBookCard(bookname, author, false);
+  event.preventDefault();
+  dialog.close();
+});
+
+dialog.addEventListener("close", (e) => {
+  document.querySelector("#book-info").reset();
+})
 
 function createBookCard(bookname, author, read) {
   const newBookCard = createSpecificElement("div", "book-card", null);

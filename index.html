@@ -15,6 +15,35 @@
         <button class="cancel">No</button>
     </dialog>
 
+    <dialog id="add-book-dialog">
+        <form id="book-info">
+            <p>
+                <label for="title">
+                    Title:
+                    <input type="text" id="title" name="title">
+                </label>
+            </p>
+            <p>
+                <label for="author">
+                    Author:
+                    <input type="text" id="author" name="author">
+                </label>
+            </p>
+            <p>
+                <label>
+                    Have you read it?
+                    <input type="radio" id="read" name="read-or-not" value="true">
+                        <label for="read">Yes</label>
+                    <input type="radio" id="not_read" name="read-or-not" value="false">
+                        <label for="not_read">No</label>
+                </label>
+            </p>
+            <div>
+                <button value="cancel" formmethod="dialog">Cancel</button>
+                <button id="add-book">Add book</button>
+            </div>
+        </form>
+    </dialog>
     <div id="header">
         <div id="logo"></div>
         <button id="add">Add book</button>
