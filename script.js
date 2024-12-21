@@ -34,6 +34,10 @@ addButton.addEventListener("click", () => {
 addBook.addEventListener("click", (event) => {
   const bookname = document.querySelector("input#title").value;
   const author = document.querySelector("input#author").value;
+  if (bookname == "" || author == "") {
+    alert("You should fill out all the fields.")
+    event.preventDefault();
+  }
 })
 
 function createBookCard(bookname, author, read) {
