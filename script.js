@@ -34,9 +34,16 @@ addButton.addEventListener("click", () => {
 addBook.addEventListener("click", (event) => {
   const bookname = document.querySelector("input#title").value;
   const author = document.querySelector("input#author").value;
+  const bookStatusInput = document.querySelector(`input[name="read-or-not"]:checked`);
   if (bookname == "" || author == "") {
-    alert("You should fill out all the fields.")
+    alert("You should fill out all the fields.");
     event.preventDefault();
+    return;
+  };
+  if (bookStatusInput == null) {
+    alert("Please say if you have read the book");
+    event.preventDefault();
+    return;
   }
 })
 
