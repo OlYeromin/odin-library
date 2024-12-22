@@ -21,6 +21,7 @@ function addBookToLibrary(title, author, read) {
   currentID += 1;
   const newBook = new Book(title, author, read, currentID);
   myLibrary.push(newBook);
+  return newBook;
 }
 
 addBookToLibrary("The Hobbit", "J.R.Tolkien", false)
@@ -67,8 +68,8 @@ addBook.addEventListener("click", (event) => {
     return;
   }
   const bookStatus = (bookStatusInput.value === "true");
-  addBookToLibrary(bookTitle, author, bookStatus);
-  createBookCard(bookTitle, author, bookStatus);
+  newBook = addBookToLibrary(bookTitle, author, bookStatus);
+  createBookCard(newBook);
   event.preventDefault();
   dialog.close();
 });
@@ -77,11 +78,11 @@ dialog.addEventListener("close", (e) => {
   document.querySelector("#book-info").reset();
 })
 
-function createBookCard(bookTitle, author, read) {
+function createBookCard(book) {
   const newBookCard = createSpecificElement("div", "book-card", null);
-    newBookCard.appendChild(createSpecificElement("h3", null, bookTitle));
-    newBookCard.appendChild(createSpecificElement("p", null, author));
-    if (read) 
+    newBookCard.appendChild(createSpecificElement("h3", null, book.title));
+    newBookCard.appendChild(createSpecificElement("p", null, book.author));
+    if (book.read) 
       newBookCard.appendChild(createSpecificElement("p", null, "Read"))
     else 
       newBookCard.appendChild(createSpecificElement("p", null, "Not read"));
