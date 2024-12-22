@@ -24,7 +24,6 @@ addBookToLibrary("The Hobbit", "J.R.Tolkien", false)
 addBookToLibrary("Slaughterhouse-Five", "K.Vonnegut", true)
 
 const addButton = document.querySelector("#add");
-/*addButton.addEventListener("click", addBookCard());*/
 const bookList = document.querySelector("main");
 deletionDialog = document.querySelector("#deletion-dialog");
 confirmationButton = document.querySelector("#deletion-dialog > .confirm");
@@ -51,10 +50,10 @@ addButton.addEventListener("click", () => {
 });
 
 addBook.addEventListener("click", (event) => {
-  const bookname = document.querySelector("input#title").value;
+  const bookTitle = document.querySelector("input#title").value;
   const author = document.querySelector("input#author").value;
   const bookStatusInput = document.querySelector(`input[name="read-or-not"]:checked`);
-  if (bookname == "" || author == "") {
+  if (bookTitle == "" || author == "") {
     alert("You should fill out all the fields.");
     event.preventDefault();
     return;
@@ -64,8 +63,8 @@ addBook.addEventListener("click", (event) => {
     event.preventDefault();
     return;
   }
-  if (bookStatusInput.value === "true") createBookCard(bookname, author, true);
-    else createBookCard(bookname, author, false);
+  if (bookStatusInput.value === "true") createBookCard(bookTitle, author, true);
+    else createBookCard(bookTitle, author, false);
   event.preventDefault();
   dialog.close();
 });
@@ -74,9 +73,9 @@ dialog.addEventListener("close", (e) => {
   document.querySelector("#book-info").reset();
 })
 
-function createBookCard(bookname, author, read) {
+function createBookCard(bookTitle, author, read) {
   const newBookCard = createSpecificElement("div", "book-card", null);
-    newBookCard.appendChild(createSpecificElement("h3", null, bookname));
+    newBookCard.appendChild(createSpecificElement("h3", null, bookTitle));
     newBookCard.appendChild(createSpecificElement("p", null, author));
     if (read) 
       newBookCard.appendChild(createSpecificElement("p", null, "Read"))
