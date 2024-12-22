@@ -37,11 +37,15 @@ bookList.onclick = function(event) {
   let target = event.target;
   if (target.className != "delete-card") return;
   deletionDialog.showModal();
-  confirmationButton.onclick = () => {      // If you use event listeners, you will need to remove them
-    target.parentNode.parentNode.remove();  // after clicking the cancelButton, which proved to be impossible. 
-    deletionDialog.close();                 // Otherwise the books you decided not to delete will be deleted
-  };                                        // once you finally choose to delete some book. 
+  confirmationButton.onclick = () => {      
+    target.parentNode.parentNode.remove();  
+    deletionDialog.close();                 
+  };
 };
+// If you use event listeners, you will need to remove them
+// after clicking the cancelButton, which proved to be impossible. 
+// Otherwise the books you decided not to delete will be deleted
+// once you finally choose to delete some book. 
 
 cancelButton.addEventListener("click", () => {
   deletionDialog.close()  
