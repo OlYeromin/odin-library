@@ -1,9 +1,11 @@
 const myLibrary = [];
+var currentID = -1;
 
-function Book(title, author, read) {
+function Book(title, author, read, bookID) {
   this.title = title;
   this.author = author;
   this.read = read;
+  this.bookID = bookID;
 }
 
 function createSpecificElement(element, className, text) {
@@ -16,7 +18,8 @@ function createSpecificElement(element, className, text) {
 }
 
 function addBookToLibrary(title, author, read) {
-  const newBook = new Book(title, author, read);
+  currentID += 1;
+  const newBook = new Book(title, author, read, currentID);
   myLibrary.push(newBook);
 }
 
