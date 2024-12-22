@@ -66,8 +66,8 @@ addBook.addEventListener("click", (event) => {
     event.preventDefault();
     return;
   }
-  if (bookStatusInput.value === "true") createBookCard(bookTitle, author, true);
-    else createBookCard(bookTitle, author, false);
+  const bookStatus = (bookStatusInput.value === "true");
+  createBookCard(bookTitle, author, bookStatus);
   event.preventDefault();
   dialog.close();
 });
