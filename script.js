@@ -90,5 +90,6 @@ function createBookCard(book) {
       buttonList.appendChild(createSpecificElement("button", "delete-card", "Delete book"));
       buttonList.appendChild(createSpecificElement("button", null, "Read"));
     newBookCard.appendChild(buttonList);
+  newBookCard.id = book.bookID;
   bookList.appendChild(newBookCard);
 } 
