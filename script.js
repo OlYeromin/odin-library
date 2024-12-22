@@ -38,8 +38,10 @@ bookList.onclick = function(event) {
   if (target.className != "delete-card") return;
   deletionDialog.showModal();
   confirmationButton.onclick = () => {      
-    target.parentNode.parentNode.remove();  
-    deletionDialog.close();                 
+    const selectedCard = target.parentNode.parentNode;
+    removeFromLibrary(selectedCard.id);
+    selectedCard.remove();
+    deletionDialog.close();  
   };
 };
 // If you use event listeners, you will need to remove them
