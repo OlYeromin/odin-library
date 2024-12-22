@@ -24,6 +24,11 @@ function addBookToLibrary(title, author, read) {
   return newBook;
 }
 
+function removeFromLibrary(id) {
+  bookIndex = myLibrary.findIndex(book => book.bookID == id);
+  myLibrary.splice(bookIndex, 1);
+}
+
 addBookToLibrary("The Hobbit", "J.R.Tolkien", false)
 addBookToLibrary("Slaughterhouse-Five", "K.Vonnegut", true)
 
