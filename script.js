@@ -114,6 +114,7 @@ hideUnreadButton.addEventListener("click", () => {
     unreadBooks.forEach((unreadBook) => {
       unreadBook.classList.add("hidden");
     });
+    hideUnreadButton.textContent = "Display unread"
     unreadHidden = true;
   }
   else {
@@ -121,5 +122,6 @@ hideUnreadButton.addEventListener("click", () => {
       unreadBook.classList.remove("hidden");
     });
     unreadHidden = false;
+    hideUnreadButton.textContent = "Hide unread"
   }
 })
