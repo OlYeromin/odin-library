@@ -106,7 +106,10 @@ function createBookCard(book) {
 }
 
 const hideUnreadButton = document.querySelector("button#hide-unread");
-var unreadHidden = false;
+const hiddenBooks = {
+  unread : false,
+  read : false
+};
 
 hideUnreadButton.addEventListener("click", () => {
   unreadBooks = document.querySelectorAll("div.book-card.unread");
