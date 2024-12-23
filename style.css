@@ -65,3 +65,7 @@ div.book-card {
     justify-content: space-between;
     flex-direction: column;
 }
+
+div.book-card.hidden {
+    display: none;
+}
