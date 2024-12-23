@@ -105,26 +105,29 @@ function createBookCard(book) {
   bookList.appendChild(newBookCard);
 }
 
-const hideUnreadButton = document.querySelector("button#hide-unread");
 const hiddenBooks = {
   unread : false,
   read : false
 };
 
-hideUnreadButton.addEventListener("click", () => {
-  unreadBooks = document.querySelectorAll("div.book-card.unread");
-  if (unreadHidden === false) {
-    unreadBooks.forEach((unreadBook) => {
-      unreadBook.classList.add("hidden");
-    });
-    hideUnreadButton.textContent = "Display unread"
-    unreadHidden = true;
-  }
-  else {
-    unreadBooks.forEach((unreadBook) => {
-      unreadBook.classList.remove("hidden");
-    });
-    unreadHidden = false;
-    hideUnreadButton.textContent = "Hide unread"
-  }
-})
+const hideButtons = document.querySelectorAll("button.hide");
+hideButtons.forEach(hideButton => {
+  hideButton.addEventListener("click", (event) => {
+    targetClass = event.target.classList[1];
+    selectedBooks = document.querySelectorAll(`div.book-card.${targetClass}`);
+    if (hiddenBooks[targetClass] === false) {
+      selectedBooks.forEach((selectedBook) => {
+        selectedBook.classList.add("hidden");
+      });
+      event.target.textContent = `Display ${targetClass}`
+      Object.defineProperty(hiddenBooks, targetClass, {value : true});
+    }
+    else {
+      selectedBooks.forEach((selectedBook) => {
+        selectedBook.classList.remove("hidden");
+      });
+      event.target.textContent = `Hide ${targetClass}`
+      Object.defineProperty(hiddenBooks, targetClass, {value : false});
+    }
+  })
+});
