@@ -103,4 +103,13 @@ function createBookCard(book) {
     newBookCard.appendChild(buttonList);
   newBookCard.id = book.bookID;
   bookList.appendChild(newBookCard);
-} 
+}
+
+const hideUnreadButton = document.querySelector("button#hide-unread");
+
+hideUnreadButton.addEventListener("click", () => {
+  unreadBooks = document.querySelectorAll("div.book-card.unread");
+  unreadBooks.forEach((unreadBook) => {
+    unreadBook.classList.add("hidden");
+  });
+})
