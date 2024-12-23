@@ -106,10 +106,20 @@ function createBookCard(book) {
 }
 
 const hideUnreadButton = document.querySelector("button#hide-unread");
+var unreadHidden = false;
 
 hideUnreadButton.addEventListener("click", () => {
   unreadBooks = document.querySelectorAll("div.book-card.unread");
-  unreadBooks.forEach((unreadBook) => {
-    unreadBook.classList.add("hidden");
-  });
+  if (unreadHidden === false) {
+    unreadBooks.forEach((unreadBook) => {
+      unreadBook.classList.add("hidden");
+    });
+    unreadHidden = true;
+  }
+  else {
+    unreadBooks.forEach((unreadBook) => {
+      unreadBook.classList.remove("hidden");
+    });
+    unreadHidden = false;
+  }
 })
