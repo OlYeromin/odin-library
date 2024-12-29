@@ -94,16 +94,16 @@ function createBookCard(book) {
     newBookCard.appendChild(createSpecificElement("h3", null, book.title));
     newBookCard.appendChild(createSpecificElement("p", null, book.author));
     if (book.read) {
-      newBookCard.appendChild(createSpecificElement("p", null, "Read"))
+      newBookCard.appendChild(createSpecificElement("p", "book-status", "Read"))
       newBookCard.classList.add("read");
     }
     else {
-      newBookCard.appendChild(createSpecificElement("p", null, "Not read"));
+      newBookCard.appendChild(createSpecificElement("p", "book-status", "Not read"));
       newBookCard.classList.add("unread");
     }
     const buttonList = createSpecificElement("div", "book-operations", null);
       buttonList.appendChild(createSpecificElement("button", "delete-card", "Delete book"));
-      buttonList.appendChild(createSpecificElement("button", null, "Read"));
+      buttonList.appendChild(createSpecificElement("button", "toggle-read", "Read"));
     newBookCard.appendChild(buttonList);
   newBookCard.id = `card${book.bookID}`;
   bookList.appendChild(newBookCard);
