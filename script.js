@@ -8,6 +8,20 @@ function Book(title, author, read, bookID) {
   this.bookID = bookID;
 }
 
+function toggleCardRead(bookCard) {
+  const statusPara = document.querySelector(`#${bookCard.id} > p.book-status`);
+  if (bookCard.classList.contains("read")) {
+    statusPara.textContent = "Not read";
+    bookCard.classList.remove("read");
+    bookCard.classList.add("unread");
+  }
+  else {
+    statusPara.textContent = "Read";
+    bookCard.classList.remove("unread");
+    bookCard.classList.add("read");
+  }
+}
+
 function createSpecificElement(element, className, text) {
   specificELement = document.createElement(element);
   if (className != null)
@@ -63,10 +77,7 @@ bookList.onclick = function(event) {
   let target = event.target;
   if (target.className != "toggle-read") return;
   const selectedCard = target.parentNode.parentNode;
-  const statusPara = document.querySelector(`#${selectedCard.id} > p.book-status`);
-  if (selectedCard.classList.contains("read")) 
-    statusPara.textContent = "Not read"
-  else statusPara.textContent = "Read"
+  toggleCardRead(selectedCard);
 };
 
 
