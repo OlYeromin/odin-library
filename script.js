@@ -1,6 +1,3 @@
-        /* DON'T FORGET :
-        WHEN YOU CREATE A NEW CARD, ADD A CLASS TO IT! */
-
 const myLibrary = [];
 var currentID = -1;
 
