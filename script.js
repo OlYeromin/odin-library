@@ -96,10 +96,14 @@ function createBookCard(book) {
   const newBookCard = createSpecificElement("div", "book-card", null);
     newBookCard.appendChild(createSpecificElement("h3", null, book.title));
     newBookCard.appendChild(createSpecificElement("p", null, book.author));
-    if (book.read) 
+    if (book.read) {
       newBookCard.appendChild(createSpecificElement("p", null, "Read"))
-    else 
+      newBookCard.classList.add("read");
+    }
+    else {
       newBookCard.appendChild(createSpecificElement("p", null, "Not read"));
+      newBookCard.classList.add("unread");
+    }
     const buttonList = createSpecificElement("div", "book-operations", null);
       buttonList.appendChild(createSpecificElement("button", "delete-card", "Delete book"));
       buttonList.appendChild(createSpecificElement("button", null, "Read"));
