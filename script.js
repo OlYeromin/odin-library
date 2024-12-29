@@ -1,3 +1,6 @@
+        /* DON'T FORGET :
+        WHEN YOU CREATE A NEW CARD, ADD A CLASS TO IT! */
+
 const myLibrary = [];
 var currentID = -1;
 
@@ -101,7 +104,7 @@ function createBookCard(book) {
       buttonList.appendChild(createSpecificElement("button", "delete-card", "Delete book"));
       buttonList.appendChild(createSpecificElement("button", null, "Read"));
     newBookCard.appendChild(buttonList);
-  newBookCard.id = book.bookID;
+  newBookCard.id = `card${book.bookID}`;
   bookList.appendChild(newBookCard);
 }
 
