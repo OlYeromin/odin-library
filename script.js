@@ -57,6 +57,19 @@ bookList.onclick = function(event) {
 cancelButton.addEventListener("click", () => {
   deletionDialog.close()  
 });
+
+
+bookList.onclick = function(event) {
+  let target = event.target;
+  if (target.className != "toggle-read") return;
+  const selectedCard = target.parentNode.parentNode;
+  const statusPara = document.querySelector(`#${selectedCard.id} > p.book-status`);
+  if (selectedCard.classList.contains("read")) 
+    statusPara.textContent = "Not read"
+  else statusPara.textContent = "Read"
+};
+
+
 const dialog = document.querySelector("#add-book-dialog");
 const addBook = document.querySelector("#add-book");
 
