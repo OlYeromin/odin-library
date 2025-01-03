@@ -10,15 +10,12 @@ body {
     grid-template-rows: min-content 5fr min-content;
 }
 
-/* Modal styling taken from
-https://www.w3schools.com/howto/howto_css_modals.asp */
-
 #header {
     background-color: blanchedalmond;
+    height: 50px;
 }
 
 button {
-    height: 40%;
     background: none;
     border: none;
 }
@@ -29,7 +26,6 @@ div#header > button {
     font-weight: bold;
     font-size: 20px;
     border-radius: 20px;
-    height: 50%;
     transition: 0.3s;
 }
 
