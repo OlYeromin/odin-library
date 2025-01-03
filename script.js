@@ -6,6 +6,12 @@ function Book(title, author, read, bookID) {
   this.author = author;
   this.read = read;
   this.bookID = bookID;
+  this.toggleRead = function() {
+    if (this.read) 
+      this.read = false
+    else 
+      this.read = true;
+  }
 }
 
 function toggleCardRead(bookCard) {
@@ -79,7 +85,6 @@ bookList.onclick = function(event) {
   const selectedCard = target.parentNode.parentNode;
   toggleCardRead(selectedCard);
 };
-
 
 const dialog = document.querySelector("#add-book-dialog");
 const addBook = document.querySelector("#add-book");
