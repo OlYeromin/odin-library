@@ -60,14 +60,22 @@ cancelButton = document.querySelector("#deletion-dialog > .cancel");
 
 bookList.onclick = function(event) {
   let target = event.target;
-  if (target.className != "delete-card") return;
-  deletionDialog.showModal();
-  confirmationButton.onclick = () => {      
+  if (target.className == "delete-card") {
+    deletionDialog.showModal();
+    confirmationButton.onclick = () => {      
+      const selectedCard = target.parentNode.parentNode;
+      removeFromLibrary(selectedCard.id);
+      selectedCard.remove();
+      deletionDialog.close();
+    };
+  }
+  else if (target.className == "toggle-read") {
     const selectedCard = target.parentNode.parentNode;
-    removeFromLibrary(selectedCard.id);
-    selectedCard.remove();
-    deletionDialog.close();  
-  };
+    libraryIndex = selectedCard.id.substring(4);
+    toggleCardRead(selectedCard);
+    myLibrary[libraryIndex].toggleRead();
+  }
+  else return;
 };
 // If you use event listeners, you will need to remove them
 // after clicking the cancelButton, which proved to be impossible. 
@@ -77,16 +85,6 @@ bookList.onclick = function(event) {
 cancelButton.addEventListener("click", () => {
   deletionDialog.close()  
 });
-
-
-bookList.onclick = function(event) {
-  let target = event.target;
-  if (target.className != "toggle-read") return;
-  const selectedCard = target.parentNode.parentNode;
-  libraryIndex = selectedCard.id.substring(4);
-  toggleCardRead(selectedCard);
-  myLibrary[libraryIndex].toggleRead();
-};
 
 const dialog = document.querySelector("#add-book-dialog");
 const addBook = document.querySelector("#add-book");
