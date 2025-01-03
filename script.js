@@ -83,7 +83,9 @@ bookList.onclick = function(event) {
   let target = event.target;
   if (target.className != "toggle-read") return;
   const selectedCard = target.parentNode.parentNode;
+  libraryIndex = selectedCard.id.substring(4);
   toggleCardRead(selectedCard);
+  myLibrary[libraryIndex].toggleRead();
 };
 
 const dialog = document.querySelector("#add-book-dialog");
