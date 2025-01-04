@@ -56,7 +56,7 @@ div#card-operations {
     transition: 0.3s;
 }
 
-div#header > button:hover {
+#card-operations > button:hover {
     background-color: #fb923c;
 }
 
