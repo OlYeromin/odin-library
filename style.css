@@ -25,6 +25,7 @@ button {
 }
 
 div#header > button {
+    height: 70%;
     background-color: #ea580c;
     color: white;
     font-weight: bold;
