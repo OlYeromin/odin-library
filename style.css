@@ -29,6 +29,8 @@ div#logo {
     align-items: center;
     font-size: 30px;
     font-weight: bold;
+    color: #ea580c;
+    text-shadow: 1px 1px 2px gray;
 }
 
 div#logo > span {
