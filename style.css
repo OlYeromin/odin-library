@@ -10,6 +10,11 @@ body {
     grid-template-rows: min-content 5fr min-content;
 }
 
+button {
+    background: none;
+    border: none;
+}
+
 #header {
     background-color: blanchedalmond;
     height: 50px;
@@ -19,12 +24,7 @@ body {
     align-items: center;
 }
 
-button {
-    background: none;
-    border: none;
-}
-
-div#header > button {
+#card-operations > button {
     height: 70%;
     padding: 0 20px;
     background-color: #ea580c;
