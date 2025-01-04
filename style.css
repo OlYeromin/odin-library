@@ -20,12 +20,14 @@ button {
     height: 50px;
     margin-bottom: 10px;
     display: flex;
-    justify-content: space-around;
-    align-items: center;
 }
 
 div#card-operations {
     height: 100%;
+    display: flex;
+    flex: 1;
+    justify-content: space-around;
+    align-items: center;
 }
 
 #card-operations > button {
