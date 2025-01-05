@@ -146,20 +146,28 @@ const hiddenBooks = {
 const hideButtons = document.querySelectorAll("button.hide");
 hideButtons.forEach(hideButton => {
   hideButton.addEventListener("click", (event) => {
-    targetClass = event.target.classList[1];
-    selectedBooks = document.querySelectorAll(`div.book-card.${targetClass}`);
+    if (event.target.tagName == "BUTTON") {
+      var targetClass = event.target.classList[1];
+      var targetSpan = event.target.querySelector("span");
+    }
+    else {
+      const parentButton = event.target.parentElement;
+      var targetClass = parentButton.classList[1];
+      var targetSpan = parentButton.querySelector("span");
+    }
+    const selectedBooks = document.querySelectorAll(`div.book-card.${targetClass}`);
     if (hiddenBooks[targetClass] === false) {
       selectedBooks.forEach((selectedBook) => {
         selectedBook.classList.add("hidden");
       });
-      event.target.textContent = `Display ${targetClass}`
+      targetSpan.textContent = `Display ${targetClass}`
       Object.defineProperty(hiddenBooks, targetClass, {value : true});
     }
     else {
       selectedBooks.forEach((selectedBook) => {
         selectedBook.classList.remove("hidden");
       });
-      event.target.textContent = `Hide ${targetClass}`
+      targetSpan.textContent = `Hide ${targetClass}`
       Object.defineProperty(hiddenBooks, targetClass, {value : false});
     }
   })
