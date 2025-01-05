@@ -54,10 +54,18 @@ div#card-operations {
     font-size: 20px;
     border-radius: 20px;
     transition: 0.3s;
+
+    display: flex;
+    align-items: center;
 }
 
 #card-operations > button:hover {
     background-color: #fb923c;
+}
+
+#card-operations > button > svg {
+    margin-right: 10px;
+    height: 75%;
 }
 
 #footer {
