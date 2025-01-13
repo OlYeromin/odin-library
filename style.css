@@ -134,6 +134,10 @@ dialog::backdrop {
     margin-top: 5px;
 }
 
+input[type='radio'] {
+    accent-color: #ea580c;
+}
+
 
 main {
     display: grid;
