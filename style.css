@@ -92,6 +92,14 @@ dialog::backdrop {
     font-weight: 500;
 }
 
+
+#add-book-dialog label[for="author"], 
+#add-book-dialog label[for="title"]  {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
 main {
     display: grid;
     grid-template-rows: min-content;
