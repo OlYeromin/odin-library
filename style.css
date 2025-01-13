@@ -120,6 +120,20 @@ dialog::backdrop {
     border-bottom: 2px solid black;
 }
 
+#add-book-dialog label[for="read"],
+#add-book-dialog label[for="not_read"] {
+    font-weight: 400;
+}
+
+#add-book-dialog p:last-of-type {
+    display: flex;
+    flex-direction: column;
+}
+
+#add-book-dialog p>span {
+    margin-top: 5px;
+}
+
 
 main {
     display: grid;
