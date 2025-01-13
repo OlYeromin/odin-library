@@ -138,6 +138,11 @@ input[type='radio'] {
     accent-color: #ea580c;
 }
 
+form > div {
+    display: flex;
+    justify-content: space-between;
+}
+
 
 main {
     display: grid;
