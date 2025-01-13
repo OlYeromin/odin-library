@@ -88,6 +88,10 @@ dialog::backdrop {
     opacity: 0.6;
 }
 
+#add-book-dialog label {
+    font-weight: 500;
+}
+
 main {
     display: grid;
     grid-template-rows: min-content;
