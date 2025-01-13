@@ -78,6 +78,16 @@ div#card-operations {
     align-items: center;
 }
 
+dialog {
+    border: none;
+    border-radius: 10px;
+}
+
+dialog::backdrop {
+    background-color: black;
+    opacity: 0.6;
+}
+
 main {
     display: grid;
     grid-template-rows: min-content;
