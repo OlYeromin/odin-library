@@ -100,6 +100,27 @@ dialog::backdrop {
     justify-content: space-between;
 }
 
+#add-book-dialog input[type="text"] {
+    font-size: 16px;
+    margin-top: 5px;
+
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 2px solid gray;
+
+    transition: 0.3s;
+}
+
+#add-book-dialog input[type="text"]:focus {
+    outline: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 2px solid black;
+}
+
+
 main {
     display: grid;
     grid-template-rows: min-content;
