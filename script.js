@@ -132,7 +132,7 @@ function createBookCard(book) {
     }
     const buttonList = createSpecificElement("div", "book-operations", null);
       buttonList.appendChild(createSpecificElement("button", "delete-card", "Delete book"));
-      buttonList.appendChild(createSpecificElement("button", "toggle-read", "Read"));
+      buttonList.appendChild(createSpecificElement("button", "toggle-read", "Toggle read"));
     newBookCard.appendChild(buttonList);
   newBookCard.id = `card${book.bookID}`;
   bookList.appendChild(newBookCard);
