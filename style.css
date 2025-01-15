@@ -183,6 +183,13 @@ div.book-card {
     flex-direction: column;
 }
 
+div.book-card h3, 
+div.book-card p {
+    margin: 0;
+    padding-top: 1ch;
+    padding-bottom: 1ch;
+}
+
 div.book-card.hidden {
     display: none;
 }
