@@ -188,6 +188,7 @@ div.book-card p {
     margin: 0;
     padding-top: 1ch;
     padding-bottom: 1ch;
+    padding-left: 6px;
 }
 
 div.book-operations > button {
