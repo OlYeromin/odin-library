@@ -161,7 +161,7 @@ main {
     display: grid;
     grid-template-rows: min-content;
     grid-auto-rows: auto;
-    grid-template-columns: repeat(auto-fit, minmax(15ch, 36ch));
+    grid-template-columns: repeat(auto-fit, minmax(15ch, 30ch));
     justify-items: stretch;
     grid-auto-flow: row;
     
